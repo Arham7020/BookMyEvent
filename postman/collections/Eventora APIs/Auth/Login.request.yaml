@@ -1,0 +1,21 @@
+$kind: http-request
+url: http://localhost:5000/api/auth/login
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "email": "admin@eventora.com",
+        "password": "password123"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      const responseData = pm.response.json();
+      if(responseData.token) {
+          pm.environment.set("token", responseData.token);
+      }
+    language: text/javascript
+order: 3000

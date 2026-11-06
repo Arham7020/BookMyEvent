@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-night: #0c0914;
+  --color-surface: #17122b;
+  --color-raise: #241c42;
+  --color-line: #342b5a;
+  --color-fg: #f4f1ff;
+  --color-muted: #a9a3c8;
+  --color-brand: #c026d3;
+  --color-brand-deep: #a21caf;
+  --color-brand-soft: #e879f9;
+  --color-gold: #ffc857;
+}
+
+@layer base {
+  html { color-scheme: dark; }
+  body { @apply bg-night font-sans text-fg antialiased; }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.015em; }
+  :focus-visible { outline: 2px solid var(--color-brand-soft); outline-offset: 2px; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[1760px] px-5 sm:px-8 lg:px-14; }
+
+  .input {
+    @apply w-full rounded-lg border border-line bg-night px-4 py-3 text-base text-fg transition placeholder:text-muted/60 focus:border-brand-soft focus:outline-none focus:ring-2 focus:ring-brand/40;
+  }
+  .label { @apply mb-1.5 block text-sm font-semibold text-fg; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply bg-brand text-white hover:bg-brand-deep; }
+  .btn-accent { @apply bg-gold text-night hover:brightness-95; }
+  .btn-ghost { @apply border border-line bg-surface text-fg hover:border-brand-soft; }
+  .btn-sm { @apply rounded-md px-3 py-2 text-sm; }
+
+  .pill { @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold; }
+  .pill-ok { background: rgb(52 211 153 / 0.16); color: #6ee7b7; }
+  .pill-warn { background: rgb(255 200 87 / 0.16); color: #ffd479; }
+  .pill-bad { background: rgb(251 113 133 / 0.16); color: #fda4af; }
+  .pill-neutral { @apply bg-raise text-fg; }
+
+  /* Ticket silhouette: notches are cut out so whatever is behind shows through */
+  .ticket {
+    --notch: 11px;
+    --stub: 88px;
+    -webkit-mask:
+      radial-gradient(circle var(--notch) at 0 calc(100% - var(--stub)), #0000 98%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle var(--notch) at 100% calc(100% - var(--stub)), #0000 98%, #000) right / 51% 100% no-repeat;
+    mask:
+      radial-gradient(circle var(--notch) at 0 calc(100% - var(--stub)), #0000 98%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle var(--notch) at 100% calc(100% - var(--stub)), #0000 98%, #000) right / 51% 100% no-repeat;
+  }
+  .perforation {
+    @apply pointer-events-none absolute inset-x-5 border-t-2 border-dashed border-line;
+    bottom: var(--stub);
+  }
+}
+
+@keyframes ticket-in {
+  from { opacity: 0; transform: translateY(24px) rotate(0deg); }
+  to { opacity: 1; transform: translateY(0) rotate(-2.5deg); }
+}
+.ticket-in { animation: ticket-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticket-in { animation: none; transform: rotate(-2.5deg); }
+  * { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}

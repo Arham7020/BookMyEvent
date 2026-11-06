@@ -1,0 +1,7 @@
+$kind: http-request
+name: Cancel/Reject Booking (Admin/User)
+url: http://localhost:5000/api/bookings/{{booking_id}}
+method: DELETE
+headers:
+  Authorization: Bearer {{token}}
+order: 5000

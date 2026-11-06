@@ -1,0 +1,21 @@
+$kind: http-request
+url: http://localhost:5000/api/auth/verify-otp
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "email": "test@example.com",
+        "otp": "123456"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      const responseData = pm.response.json();
+      if(responseData.token) {
+          pm.environment.set("token", responseData.token);
+      }
+    language: text/javascript
+order: 2000

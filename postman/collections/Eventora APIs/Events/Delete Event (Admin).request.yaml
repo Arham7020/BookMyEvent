@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:5000/api/events/{{event_id}}
+method: DELETE
+headers:
+  Authorization: Bearer {{token}}
+order: 5000

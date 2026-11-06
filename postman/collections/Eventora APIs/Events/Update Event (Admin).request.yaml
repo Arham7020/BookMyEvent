@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:5000/api/events/{{event_id}}
+method: PUT
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: |-
+    {
+        "ticketPrice": 550
+    }
+order: 4000

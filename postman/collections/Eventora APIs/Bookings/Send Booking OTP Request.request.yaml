@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:5000/api/bookings/send-otp
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+order: 1000

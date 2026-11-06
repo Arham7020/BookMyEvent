@@ -1,0 +1,28 @@
+$kind: http-request
+url: http://localhost:5000/api/events
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: |-
+    {
+        "title": "Tech Conference 2024",
+        "description": "A massive conference for developers",
+        "date": "2024-12-01",
+        "location": "San Francisco, CA",
+        "category": "Technology",
+        "totalSeats": 100,
+        "ticketPrice": 500,
+        "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      const responseData = pm.response.json();
+      if(responseData._id) {
+          pm.environment.set("event_id", responseData._id);
+      }
+    language: text/javascript
+order: 3000

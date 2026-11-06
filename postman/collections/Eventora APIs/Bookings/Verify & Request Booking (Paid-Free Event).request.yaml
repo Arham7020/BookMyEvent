@@ -1,0 +1,23 @@
+$kind: http-request
+name: Verify & Request Booking (Paid/Free Event)
+url: http://localhost:5000/api/bookings
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: |-
+    {
+        "eventId": "{{event_id}}",
+        "otp": "123456"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      const responseData = pm.response.json();
+      if(responseData.booking && responseData.booking._id) {
+          pm.environment.set("booking_id", responseData.booking._id);
+      }
+    language: text/javascript
+order: 2000

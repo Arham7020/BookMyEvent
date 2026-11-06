@@ -1,0 +1,14 @@
+$kind: http-request
+description: ""
+url: http://localhost:5000/api/auth/verify-otp
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"test@gmail.com\",\r
+
+    \  \"otp\": \"YOUR_OTP\"\r
+
+    }"
+order: 1011106215295220

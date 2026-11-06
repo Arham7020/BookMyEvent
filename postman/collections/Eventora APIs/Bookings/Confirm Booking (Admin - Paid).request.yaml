@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:5000/api/bookings/{{booking_id}}/confirm
+method: PUT
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: |-
+    {
+        "paymentStatus": "paid"
+    }
+order: 3000
