@@ -15,7 +15,7 @@ export default function Footer() {
                     <Link to="/login" className="hover:text-fg">Log in</Link>
                 </div>
             </div>
-            <div className="wrap pb-8 text-xs text-muted">© {new Date().getFullYear()} Eventora</div>
+            <div className="wrap pb-8 text-xs text-muted">© {new Date().getFullYear()} BookMyEvent</div>
         </footer>
     );
 }
