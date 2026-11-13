@@ -2,7 +2,6 @@
 
 A full-stack event booking platform built with the MERN stack. Discover events, search by category, and book tickets in a few clicks.
 
-🔗 **Live demo:** [add link here]
 
 ![BookMyEvent Home](Untitled.png)
 
