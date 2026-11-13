@@ -1,36 +1,43 @@
 # 🎟️ BookMyEvent
 
-A full-stack event booking platform built with the MERN stack.
+A full-stack event booking platform built with the MERN stack. Discover events, search by category, and book tickets in a few clicks.
 
-BookMyEvent is a project I'm building to make discovering and booking events easier. It includes user authentication, email OTP verification and an admin panel, with a focus on creating a smooth and simple experience.
+🔗 **Live demo:** [add link here]
+
+![BookMyEvent Home](Untitled.png)
 
 ## ✨ Features
 
-- User registration and login
+- User registration and login with JWT authentication
 - Email OTP verification
-- JWT-based authentication
-- Event browsing and booking
-- Admin panel
-- Responsive user interface
+- Event browsing, search and category filters
+- Ticket booking with live availability
+- Admin panel to create and manage events
+- Responsive UI for mobile and desktop
+
+## 📸 Screenshots
+
+| Home | Event Page |
+|------|------------|
+| ![Home](screenshots/home.png) | ![Event](screenshots/event.png) |
+
+| Booking | Admin Panel |
+|---------|-------------|
+| ![Booking](screenshots/booking.png) | ![Admin](screenshots/admin.png) |
 
 ## 🛠️ Tech Stack
 
-**Frontend**
-- React.js
-- Vite
-- CSS
-
-**Backend**
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT Authentication
+| Layer | Technologies |
+|-------|--------------|
+| Frontend | React, Vite, CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB, Mongoose |
+| Auth | JWT, Email OTP |
 
 ## 📁 Project Structure
 
 ```text
-EVENT BOOKING V2/
+BookMyEvent/
 ├── client/          # React frontend
 ├── server/          # Express backend
 ├── .gitignore
@@ -39,67 +46,63 @@ EVENT BOOKING V2/
 
 ## 🚀 Getting Started
 
+### Prerequisites
+- Node.js (v18 or higher)
+- A MongoDB database (local or MongoDB Atlas)
+- An email account for sending OTPs
+
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Event-Booking-System.git
-cd Event-Booking-System
+git clone https://github.com/Arham7020/BookMyEvent.git
+cd BookMyEvent
 ```
 
-### 2. Install backend dependencies
+### 2. Set up the backend
 
 ```bash
 cd server
 npm install
 ```
 
-### 3. Configure environment variables
+Create a `.env` file in the `server` folder using `.env.example` as a reference. Add your MongoDB connection string, JWT secret and email credentials.
 
-Create a `.env` file inside the `server` folder using `.env.example` as a reference.
-
-Add your own MongoDB connection string, JWT secret and email credentials.
-
-**Never commit your actual `.env` file to GitHub.**
-
-### 4. Start the backend
+> ⚠️ Never commit your real `.env` file to GitHub.
 
 ```bash
 npm run dev
 ```
 
-### 5. Install frontend dependencies
+### 3. Set up the frontend
 
-Open another terminal:
+Open a new terminal:
 
 ```bash
 cd client
 npm install
-```
-
-### 6. Start the frontend
-
-```bash
 npm run dev
 ```
 
-The application should now be available at:
-
-```text
-http://localhost:5173
-```
+The app will be available at `http://localhost:5173`.
 
 ## 🔐 Security
 
-- Environment variables are kept out of version control.
-- Authentication is handled using JWT.
-- Email verification uses OTP.
+- Environment variables are kept out of version control
+- Passwords and sessions are protected with JWT authentication
+- Email OTP verification for accounts
 
-## 📌 Project Status
+## 🗺️ Roadmap
 
-This project is under active development. New features, improvements and fixes are being added as development continues.
+- [ ] Online payments
+- [ ] Booking confirmation emails
+- [ ] Deploy live demo
 
-## 👨‍💻 Developer
+## 👨‍💻 Author
 
-Built with ❤️ while learning and exploring full-stack web development.
+**Arham** · [GitHub](https://github.com/Arham7020) · [LinkedIn](https://linkedin.com/in/yourname)
 
-**BookMyEvent — Making event booking simpler.**
+Open to freelance projects. Feel free to reach out!
+
+## 📄 License
+
+MIT
