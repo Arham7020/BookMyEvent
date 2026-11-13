@@ -99,7 +99,7 @@ The app will be available at `http://localhost:5173`.
 
 ## 👨‍💻 Author
 
-**Arham** · [GitHub](https://github.com/Arham7020) · [LinkedIn](https://linkedin.com/in/yourname)
+**Arham** · [GitHub](https://github.com/Arham7020) · [LinkedIn]([https://linkedin.com/in/yourname](https://www.linkedin.com/in/syed-arham-68b421393/))
 
 Open to freelance projects. Feel free to reach out!
 
